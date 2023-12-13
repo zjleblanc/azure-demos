@@ -6,4 +6,4 @@
   tasks:
     - name: Demo pulling secret from Azure Key Vault
       ansible.builtin.debug:
-        msg: "The value for me secret is: {{ lookup('azure.azcollection.azure_keyvault_secret', secret_name) }}"
+        msg: "The value for me secret is: {{ lookup('azure.azcollection.azure_keyvault_secret', secret_name, vault_url=vault_url) }}"
