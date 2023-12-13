@@ -1,0 +1,9 @@
+---
+- name: Lookup secret from Azure Key Vault
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Demo pulling secret from Azure Key Vault
+      ansible.builtin.debug:
+        msg: "The value for me secret is: {{ lookup('azure.azcollection.azure_keyvault_secret', secret_name) }}"
